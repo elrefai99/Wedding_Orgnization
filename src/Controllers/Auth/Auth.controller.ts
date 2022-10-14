@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import organization from '../../Models/User/organization'
 import client from "../../Models/User/Client";
 import UserModel from "../../Models/User/User.model";
+import TokenCookie from "../../Functions/jwt/token.jwt";
 import bcrypt from 'bcrypt'
 
 const RegisterController = async (req: Request, res: Response, next: NextFunction) =>{
@@ -49,8 +50,18 @@ const LoginController = async (req: Request, res: Response, next: NextFunction) 
         if(!find_Email){
             res.status(404).send({message: 'Email not found'});
         }
-        res.status(200).json({status: "OK",message: "success login", find_Email});
-        next();
+        const find_password = await bcrypt.compare(req.body.password, find_Email!.password);
+        if(!find_password){
+            res.status(404).send({message: 'Password is wrong'});
+        }
+        if(find_Email && find_password){
+            // made Token by Id
+            const token = TokenCookie(find_Email._id);
+            find_Email.token = token;
+
+            res.status(200).json({status: "OK",message: "success login", find_Email});
+            next();
+        }
     }catch(err){
         res.status(500).json({message: err})
     }
