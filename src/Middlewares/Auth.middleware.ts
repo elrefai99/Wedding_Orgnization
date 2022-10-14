@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import { NextFunction, Response } from 'express';
 import DataStord from "../Utils/Types/DataStord";
 
-const verifyToken = async (req: RequestAuthintication, res: Response, next: NextFunction) => {
+const verifyToken = async (req: RequestAuthintication | any, res: Response, next: NextFunction) => {
     const token = req.body.token || req.headers['token'];
 
     if(token){
@@ -29,4 +29,4 @@ const verifyToken = async (req: RequestAuthintication, res: Response, next: Next
     }
 }
 
-export default verifyToken;
+export = verifyToken;

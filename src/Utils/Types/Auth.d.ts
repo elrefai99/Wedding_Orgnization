@@ -1,8 +1,8 @@
 import { Request } from "express";
-import UserInterface from '../../Interfaces/User/User'
+import DataStord from '../Types/DataStord'
 
 interface RequestAuthintication extends Request {
-    user: UserInterface
+    user: DataStord
 }
 
 export default RequestAuthintication
