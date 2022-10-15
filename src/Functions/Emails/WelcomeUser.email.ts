@@ -15,6 +15,7 @@ const WelCome_New_User = (email: string, username: string) => {
                         `
                 }
 
+                
                 sgMail.send(message)
                     .then(() => {
                         console.log("Email Send ...")
