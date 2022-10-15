@@ -8,7 +8,11 @@ const WelCome_New_User = (email: string, username: string) => {
                     to: `${email}`,
                     from: "wedding.cs74@gmail.com",
                     subject: 'Hello from Wedding.cs74',
-                    html: `<strong>Welocme to the app, ${username}. Let me know how you get along with the app.</strong>`
+                    html: `
+                            <strong>
+                                Welocme to the app, ${username}. Let me know how you get along with the app.
+                            </strong>
+                        `
                 }
 
                 sgMail.send(message)
