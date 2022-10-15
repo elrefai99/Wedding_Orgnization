@@ -4,6 +4,7 @@ import client from "../../Models/User/Client";
 import UserModel from "../../Models/User/User.model";
 import TokenCookie from "../../Functions/jwt/token.jwt";
 import bcrypt from 'bcrypt'
+import WelCome_New_User from "../../Functions/Emails/WelcomeUser.email";
 
 const RegisterController = async (req: Request, res: Response, next: NextFunction) =>{
     try{
@@ -27,6 +28,9 @@ const RegisterController = async (req: Request, res: Response, next: NextFunctio
 
                 const user = await new client(user_Data);
                 const newUser = await user.save();
+                
+                WelCome_New_User(req.body.email, req.body.username)
+
                 res.status(200).json({status: "OK", message: "success", data: newUser});
     
             }else if(types === "organization"){
