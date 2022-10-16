@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import UserInterface from "../../Interfaces/User/User";
-import { toJSON } from "../../Functions/User/toJSON";
+import { toJSON } from "../../Functions/User/toJSON.User";
 
 const adderssSchema = new Schema({
     streetAddress: {

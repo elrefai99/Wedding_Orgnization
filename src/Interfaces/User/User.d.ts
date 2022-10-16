@@ -1,3 +1,5 @@
+import { Document } from "mongoose";
+
 interface UserInterface { 
     _id: string;
     fName: string;
@@ -13,6 +15,14 @@ interface UserInterface {
         country: string;
     }
     isAdmin: boolean;
+    isHall: boolean;
+    isCars: boolean;
+    isClothes: boolean;
     token: string;
 }
+
+export interface toJSON_User extends UserInterface, Document{
+    toJSON: () => any; // any for now
+}
+
 export default UserInterface;

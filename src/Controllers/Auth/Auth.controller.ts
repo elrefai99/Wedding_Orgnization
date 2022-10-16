@@ -55,11 +55,11 @@ const LoginController = async (req: Request, res: Response, next: NextFunction) 
     try{
         const find_Email = await UserModel.findOne({email: req.body.email});
         if(!find_Email){
-            res.status(403).send({message: 'Email not found'});
+            res.status(403).json({status: 'Failed', message: 'Email not found'});
         }
         const find_password = await bcrypt.compare(req.body.password, find_Email!.password);
         if(!find_password){
-            res.status(403).send({message: 'Password is wrong'});
+            res.status(403).json({status: 'Failed', message: 'password is incorrect'});
         }
         if(find_Email && find_password){
             // made Token by Id
@@ -67,7 +67,6 @@ const LoginController = async (req: Request, res: Response, next: NextFunction) 
             find_Email.token = token;
 
             res.status(200).json({status: "OK",message: "success login", find_Email});
-            
         }
         next()
     }catch(err){

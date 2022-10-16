@@ -11,7 +11,7 @@ const getUserController = async (req: Request | any ,res: Response, next: NextFu
         res.status(500).json({message: err})
     }
 }
-
+ 
 const UpdateUserProfileController = async (req: Request | any, res: Response, next: NextFunction) => {
     try{
         const userID = req.user.id;
