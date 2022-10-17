@@ -12,4 +12,5 @@ MongoDB(app)
 // Setup send json and other
 setupOther(app)
 
+// Routers
 indexHooks(app)
