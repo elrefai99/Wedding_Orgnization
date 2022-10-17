@@ -11,9 +11,9 @@
         "governorate_name_en": "Giza" 
     },
     {
-      "id": "3",
-      "governorate_name_ar": "الأسكندرية",
-      "governorate_name_en": "Alexandria"
+        "id": "3",
+        "governorate_name_ar": "الأسكندرية",
+        "governorate_name_en": "Alexandria"
     },
     { 
         "id": "4", 
@@ -21,14 +21,14 @@
         "governorate_name_en": "Dakahlia" 
     },
     {
-      "id": "5",
-      "governorate_name_ar": "البحر الأحمر",
-      "governorate_name_en": "Red Sea"
+        "id": "5",
+        "governorate_name_ar": "البحر الأحمر",
+        "governorate_name_en": "Red Sea"
     },
     { 
         "id": "6", 
-    "governorate_name_ar": "البحيرة", 
-    "governorate_name_en": "Beheira" 
+        "governorate_name_ar": "البحيرة", 
+        "governorate_name_en": "Beheira" 
     },
     { 
         "id": "7", 
@@ -65,9 +65,21 @@
         "governorate_name_ar": "الوادي الجديد",
         "governorate_name_en": "New Valley"
     },
-    { "id": "14", "governorate_name_ar": "السويس", "governorate_name_en": "Suez" },
-    { "id": "15", "governorate_name_ar": "اسوان", "governorate_name_en": "Aswan" },
-    { "id": "16", "governorate_name_ar": "اسيوط", "governorate_name_en": "Assiut" },
+    { 
+        "id": "14", 
+        "governorate_name_ar": "السويس", 
+        "governorate_name_en": "Suez" 
+    },
+    { 
+        "id": "15", 
+        "governorate_name_ar": "اسوان", 
+        "governorate_name_en": "Aswan" 
+    },
+    { 
+        "id": "16", 
+        "governorate_name_ar": "اسيوط", 
+        "governorate_name_en": "Assiut" 
+    },
     {
         "id": "17",
         "governorate_name_ar": "بني سويف",
@@ -78,8 +90,16 @@
         "governorate_name_ar": "بورسعيد",
         "governorate_name_en": "Port Sa"
     },
-    { "id": "19", "governorate_name_ar": "دمياط", "governorate_name_en": "Damietta" },
-    { "id": "20", "governorate_name_ar": "الشرقية", "governorate_name_en": "Sharkia" },
+    { 
+        "id": "19", 
+        "governorate_name_ar": "دمياط", 
+        "governorate_name_en": "Damietta" 
+    },
+    { 
+        "id": "20", 
+        "governorate_name_ar": "الشرقية", 
+        "governorate_name_en": "Sharkia" 
+    },
     {
         "id": "21",
         "governorate_name_ar": "جنوب سيناء",
@@ -90,9 +110,21 @@
         "governorate_name_ar": "كفر الشيخ",
         "governorate_name_en": "Kafr Al sheikh"
     },
-    { "id": "23", "governorate_name_ar": "مطروح", "governorate_name_en": "Matrouh" },
-    { "id": "24", "governorate_name_ar": "الأقصر", "governorate_name_en": "Luxor" },
-    { "id": "25", "governorate_name_ar": "قنا", "governorate_name_en": "Qena" },
+    { 
+        "id": "23", 
+        "governorate_name_ar": "مطروح", 
+        "governorate_name_en": "Matrouh" 
+    },
+    { 
+        "id": "24", 
+        "governorate_name_ar": "الأقصر", 
+        "governorate_name_en": "Luxor" 
+    },
+    { 
+        "id": "25", 
+        "governorate_name_ar": "قنا", 
+        "governorate_name_en": "Qena" 
+    },
     {
         "id": "26",
         "governorate_name_ar": "شمال سيناء",
