@@ -14,6 +14,11 @@ const RegisterController = async (req: Request, res: Response, next: NextFunctio
         
         const user_Data = req.body;
 
+        const first_name = req.body.first_name;
+        const last_name = req.body.last_name;
+        const username = first_name + '_' + last_name
+        user_Data.username = username;
+
         // Hash Password
         const salt = await bcrypt.genSalt(10);
         const password = await bcrypt.hash(req.body.password, salt);

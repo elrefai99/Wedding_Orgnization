@@ -1,11 +1,23 @@
 import { Document } from "mongoose";
 
 interface Halls {
-    userId: string;
+    _id: string;
+    Owner: string;
     Hall_Name: string;
-    image: Array;
     phoneNumber: string;
     address: string;
-    
+    TimeDay: string;
+    Date_From: number;
+    Date_To: number;
+    cost_Per_Person: number;
+    max_People: number;
+    max_People: number;
+    Image: Array;
+    description: string;
 }
 
+export interface toJSON_Halls extends Halls, Document{
+    toJSON: () => any; // any for now
+}
+
+export default Halls;

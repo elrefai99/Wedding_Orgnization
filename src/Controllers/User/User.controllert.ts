@@ -1,20 +1,25 @@
 import { Request, Response, NextFunction } from "express"
 import UserModel from "../../Models/User/User.model"
+import HallModel from "../../Models/Halls/Halls.model"
 
 const getUserController = async (req: Request | any ,res: Response, next: NextFunction) => {
     try{
-        const userID = req.user.id
+        const userID = req.user.id || req.query.username
         const get_user = await UserModel.findById(userID)
-        res.status(200).json({status: "OK",message: "success", get_user})
+        // Halls
+        const UserHall = await HallModel.find({
+            Owner: userID
+        })
+        res.status(200).json({status: "OK",message: "success", get_user, UserHall})
         next()
     }catch(err){
         res.status(500).json({message: err})
     }
 }
- 
+
 const UpdateUserProfileController = async (req: Request | any, res: Response, next: NextFunction) => {
     try{
-        const userID = req.user.id;
+        const userID = req.user.id || req.params.id || req.query.username;
         const new_data = await UserModel.findByIdAndUpdate(userID, {
             $set: req.body,
         })

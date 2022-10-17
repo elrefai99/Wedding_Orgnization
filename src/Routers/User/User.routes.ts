@@ -5,9 +5,9 @@ import verifyToken from "../../Middlewares/Auth.middleware";
 const router = Router();
 
 // Get user profile
-router.get('/user', verifyToken, getUserController)
+router.get('/user/:username', verifyToken, getUserController)
 
 // Update user profile
-router.put('/user/update', verifyToken, UpdateUserProfileController)
+router.put('/user/settings/update', verifyToken, UpdateUserProfileController)
 
 export default router;
