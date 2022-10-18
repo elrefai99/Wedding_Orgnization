@@ -1,10 +1,22 @@
 import { Router } from "express";
 import verifyToken from "../../Middlewares/Auth.middleware";
-import { createHallsController } from "../../Controllers/Halls/Halls.Controller"
+import { createHallsController, getSinglePageHallController, getAllHallsController, UpdateHallController, DeleteHallController} from "../../Controllers/Halls/Halls.Controller"
 
 const router = Router();
 
 // create Halls
 router.post('/create/halls', verifyToken, createHallsController)
+
+// Get single page
+router.get('/get/:username/hall/:id', verifyToken, getSinglePageHallController)
+
+// Get All halls
+router.get('/get/all/:types', verifyToken, getAllHallsController)
+
+// Update Halls
+router.put('/hall/settings/update/:id', verifyToken, UpdateHallController)
+
+// Delete Halls
+router.delete('/hall/settings/delete/:id', verifyToken, DeleteHallController)
 
 export default router;

@@ -51,6 +51,10 @@ const HallSchema = new Schema({
         type: String,
         required: true,
     },
+    type: {
+        type: String,
+        required: true,
+    },
 })
 
 HallSchema.methods.toJSON = toJSON_Halls_Handel;
