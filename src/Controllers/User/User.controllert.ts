@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
 import UserModel from "../../Models/User/User.model"
 import HallModel from "../../Models/Halls/Halls.model"
+import CarsModel from "../../Models/Cars/cars.model"
 
 const getUserController = async (req: Request | any ,res: Response, next: NextFunction) => {
     try{
@@ -10,7 +11,11 @@ const getUserController = async (req: Request | any ,res: Response, next: NextFu
         const UserHall = await HallModel.find({
             Owner: userID
         })
-        res.status(200).json({status: "OK",message: "success", get_user, UserHall})
+        //cars
+        const UserCars = await CarsModel.find({
+            Owner: userID
+        })
+        res.status(200).json({status: "OK",message: "success", get_user, UserHall, UserCars})
         next()
     }catch(err){
         res.status(500).json({message: err})
