@@ -6,12 +6,19 @@ interface Halls {
     Hall_Name: string;
     phoneNumber: string;
     address: string;
-    TimeDay: string;
-    Date_From: number;
-    Date_To: number;
+    TimeDay: {
+        Day: string;
+        Night: string;
+    };
+    Date: {
+        From: string;
+        to: string;
+    }
     cost_Per_Person: number;
-    max_People: number;
-    max_People: number;
+    people: {
+        Max: number;
+        min: number;
+    }
     Image: Array;
     description: string;
 }

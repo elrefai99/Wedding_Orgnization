@@ -2,6 +2,17 @@ import { Schema, model } from "mongoose";
 import { toJSON_Halls_Handel } from "../../Functions/Halls/toJSON.Halls";
 import Halls from "../../Interfaces/Halls/Halls";
 
+const PeopleSchema = new Schema({
+    Max: {
+        type: Number,
+        default: 0,
+    },
+    Min: {
+        type: Number,
+        default: 0,
+    }
+})
+
 const HallSchema = new Schema({
     Owner: {
         type: String,
@@ -35,14 +46,8 @@ const HallSchema = new Schema({
         type: Number,
         default: 0
     },
-    max_People: {
-        type: Number,
-        default: 0
-    },
-    min_People: {
-        type: Number,
-        default: 0
-    },
+    People: PeopleSchema,
+
     Image: {
         type: Array,
         required: true,

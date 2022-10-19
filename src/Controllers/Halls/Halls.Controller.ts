@@ -11,12 +11,11 @@ const createHallsController = async (req: Request | any, res: Response, next: Ne
         const owner_phoneNumber = req.user.phoneNumber
 
         // Add to database
-        const {Image, TimeDay, Date_From, Date_To, max_People, min_People, description, cost_Per_Person ,Hall_Name, type} = req.body
+        const {Image, TimeDay, Date_From, Date_To, People, description, cost_Per_Person ,Hall_Name, type} = req.body
         const hall = await new HallModel({
             Date_From: Date_From, 
             Date_To: Date_To, 
-            max_People: max_People, 
-            min_People: min_People,
+            People,
             TimeDay: TimeDay, 
             Image: Image, 
             cost_Per_Person: cost_Per_Person, 
