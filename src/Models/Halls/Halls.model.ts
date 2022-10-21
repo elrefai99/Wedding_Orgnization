@@ -13,6 +13,28 @@ const PeopleSchema = new Schema({
     }
 })
 
+const DateSchema = new Schema({
+    from: {
+        type: String,
+        required: true,
+    },
+    to: {
+        type: String,
+        required: true,
+    }
+})
+
+const TimeDayOrNightsSchema = new Schema({
+    Day: {
+        type: Boolean,
+        default: false,
+    },
+    Night:{
+        type: Boolean,
+        default: false,
+    }
+})
+
 const HallSchema = new Schema({
     Owner: {
         type: String,
@@ -30,18 +52,10 @@ const HallSchema = new Schema({
         type: String,
         required: true,
     },
-    TimeDay:{
-        type: String,
-        required: true,
-    },
-    Date_From: {
-        type: String,
-        required: true,
-    },
-    Date_To: {
-        type: String,
-        required: true,
-    },
+    TimeDay:TimeDayOrNightsSchema,
+    
+    Date: DateSchema,
+
     cost_Per_Person: {
         type: Number,
         default: 0

@@ -5,7 +5,7 @@ import CarsModel from "../../Models/Cars/cars.model"
 
 const getUserController = async (req: Request | any ,res: Response, next: NextFunction) => {
     try{
-        const userID = req.user.id || req.query.username
+        const userID = req.user.id 
         const get_user = await UserModel.findById(userID)
         // Halls
         const UserHall = await HallModel.find({
@@ -13,7 +13,7 @@ const getUserController = async (req: Request | any ,res: Response, next: NextFu
         })
         //cars
         const UserCars = await CarsModel.find({
-            Owner: userID
+            owner: userID
         })
         res.status(200).json({status: "OK",message: "success", get_user, UserHall, UserCars})
         next()
