@@ -1,0 +1,28 @@
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.cart-item-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.thin-line{
+    width: auto;
+    height: 1px;
+    background-color: lightgray;
+    margin: 0;
+}
+
+.trash-btn{
+    background: transparent;
+    background-color: none;
+    border: none;
+}
+.trash-icon{
+    font-size: 16px;
+    color: lightgray;
+}

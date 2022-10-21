@@ -1,0 +1,42 @@
+.about-container{
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.blank{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.back-home-btn{
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    
+}
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(26, 86%, 71%);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    gap: 12px;
+}
+
+.details{
+    margin: 15px 0;
+}
+.blank h1 {
+    color: hsl(26, 86%, 71%);
+}

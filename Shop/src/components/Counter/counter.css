@@ -1,0 +1,42 @@
+.action-btns{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 10px;
+}
+
+.actions{
+    background-color: hsl(223, 64%, 98%);
+    padding: 7px 15px;
+    border-radius: 5px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.increase-btn, .decrease-btn{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.increase-icon, .decrease-icon{
+    color: hsl(26, 100%, 55%);
+}
+
+.cart-btn-container{
+    background-color: hsl(26, 100%, 55%);
+    padding: 7px 15px;
+    width: 140px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.add-to-cart{
+    border: none;
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

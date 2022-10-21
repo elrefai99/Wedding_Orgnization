@@ -1,0 +1,28 @@
+.checkout-item-container{
+    max-width: 900px;
+    margin: auto;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.checkout-image{
+    width: 90px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px){
+    .checkout-item-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .checkout-item-container div{
+        margin: 8px;
+    }
+}

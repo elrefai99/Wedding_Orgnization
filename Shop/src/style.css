@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: weather-regular;
+}
+
+/* @font-face {
+    font-family: noto-sans-regular;
+    src: url(./Noto_Sans/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: noto-sans-bold;
+    src: url(./Noto_Sans/NotoSans-Bold.ttf);
+} */
+
+@font-face {
+    font-family: weather-exbold;
+    src: url(./Merriweather_Sans/static/MerriweatherSans-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: weather-regular;
+    src: url(./Merriweather_Sans/static/MerriweatherSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: weather-medium;
+    src: url(./Merriweather_Sans/static/MerriweatherSans-Medium.ttf);
+}
