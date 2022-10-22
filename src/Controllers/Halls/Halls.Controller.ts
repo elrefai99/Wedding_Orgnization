@@ -49,9 +49,8 @@ const getSinglePageHallController = async (req: Request, res: Response, next: Ne
     }
 }
 
-const getAllHallsController: RequestHandler = async ( req: Request | any, res: Response, next: NextFunction) => {
+const getAllHallsController: RequestHandler = async ( _req: Request | any, res: Response, next: NextFunction) => {
     try{
-        req.body
         const getAllHalls = await HallModel.find();
             res.status(200).json(getAllHalls);
         next()
