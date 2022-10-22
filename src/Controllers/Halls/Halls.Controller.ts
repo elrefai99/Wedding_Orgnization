@@ -51,11 +51,9 @@ const getSinglePageHallController = async (req: Request, res: Response, next: Ne
 
 const getAllHallsController: RequestHandler = async ( req: Request | any, res: Response, next: NextFunction) => {
     try{
-        const type_page = req.params.type;
-        if(type_page === "hall"){
-            const getAllHalls = await HallModel.find();
+        req.body
+        const getAllHalls = await HallModel.find();
             res.status(200).json(getAllHalls);
-        }
         next()
     }catch(err){
         res.status(500).json({message: err});

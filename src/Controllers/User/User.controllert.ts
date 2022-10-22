@@ -35,7 +35,22 @@ const UpdateUserProfileController = async (req: Request | any, res: Response, ne
     }
 }
 
+// Add Save
+const SaveTopicOfAllControllers = async (req: Request | any, res: Response, next: NextFunction) => {
+    try{
+        const userID = req.user.id;
+        const new_data = await UserModel.findByIdAndUpdate(userID, {
+            Saved: req.body,
+        })
+        res.status(200).json({status: "OK", message: "success",new_data});
+        next();
+    }catch(err){
+        res.status(500).json({message: err})
+    }
+}
+
 export {
     getUserController,
-    UpdateUserProfileController
+    UpdateUserProfileController,
+    SaveTopicOfAllControllers
 }
