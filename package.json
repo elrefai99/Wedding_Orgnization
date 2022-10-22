@@ -1,7 +1,7 @@
 {
   "name": "graduation-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "The graduation project is an wedding system of buying and selling goods Inventory",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
