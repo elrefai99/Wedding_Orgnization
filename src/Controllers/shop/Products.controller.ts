@@ -23,13 +23,59 @@ const createProductController = async (req: Request | any, res: Response, next: 
 }
 
 // Get Page Details
+const getPageDetailsController = async (req: Request | any, res: Response, next: NextFunction) => {
+    try{
+        const page_id = req.params.id;
+        const get_Page = await ProductModel.findById(page_id);
+        res.status(200).json({status: "OK", message: "success",get_Page});
+        next();
+    }catch(err){
+        res.status(500).json({message: err})
+    }
+}
 
 // Get All Product Details
+const getAllProductDetailsController = async (_req: Request | any, res: Response, next: NextFunction) => {
+    try{
+        const get_All_Page = await ProductModel.find();
+        res.status(200).json({status: "OK", message: "success",get_All_Page});
+        next();
+    }catch(err){
+        res.status(500).json({message: err})
+    }
+}
 
 // Update Product Details
+const UpdateProductDetailsController = async (req: Request | any, res: Response, next: NextFunction) => {
+    try{
+        const page_id = req.params.page
+        await ProductModel.findByIdAndUpdate(page_id, {
+            $set: req.body
+        });
+        res.status(200).json({status: "OK", message: "success!! Update Done..!"});
+        next();
+    }catch(err){
+        res.status(500).json({message: err})
+    }
+} 
 
 // Delete Product Details
-
+const DeleteProductDetailsController = async (req: Request | any, res: Response, next: NextFunction) => {
+    try{
+        const page_id = req.params.page
+        await ProductModel.findByIdAndUpdate(page_id, {
+            $set: req.body
+        });
+        res.status(200).json({status: "OK", message: "success!! Update Done..!"});
+        next();
+    }catch(err){
+        res.status(500).json({message: err})
+    }
+}
 export {
-    createProductController
+    createProductController,
+    getPageDetailsController,
+    getAllProductDetailsController,
+    UpdateProductDetailsController,
+    DeleteProductDetailsController
 }

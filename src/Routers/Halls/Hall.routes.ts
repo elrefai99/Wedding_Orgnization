@@ -8,10 +8,10 @@ const router = Router();
 router.post('/create/halls', verifyToken, createHallsController)
 
 // Get single page
-router.get('/get/:username/hall/:id', verifyToken, getSinglePageHallController)
+router.get('/get/hall/:id', verifyToken, getSinglePageHallController)
 
 // Get All halls
-router.get('/get/all/:types', verifyToken, getAllHallsController)
+router.get('/get/all/halls', verifyToken, getAllHallsController)
 
 // Update Halls
 router.put('/hall/settings/update/:id', verifyToken, UpdateHallController)

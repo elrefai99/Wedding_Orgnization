@@ -6,7 +6,7 @@ const WelCome_New_User = (email: string, username: string) => {
                 
                 const message = {
                     to: `${email}`,
-                    from: "wedding.cs74@gmail.com",
+                    from: process.env.Admin_Email as string,
                     subject: 'Hello from Wedding.cs74',
                     html: `
                             <strong>
