@@ -25,31 +25,32 @@ const RegisterController = async (req: Request, res: Response, next: NextFunctio
         user_Data.password = password;
 
         // Handel Email
-        const find_Email = await UserModel.findOne({ email: req.body.email });
-        if(find_Email){
-            res.status(403).json({status: 'Failed', message: 'Email already exists'});
-        }else{
-            if(types === "cleint"){
-
-                const user = await new client(user_Data);
-                const newUser = await user.save();
-                
-                WelCome_New_User(req.body.email, req.body.username)
-
-                res.status(200).json({status: "OK", message: "success", data: newUser});
-    
-            }else if(types === "organization"){
-    
-                const user = await new organization(user_Data)
-                const newUser = await user.save();
-
-                WelCome_New_User(req.body.email, req.body.username)
-
-                res.status(200).json({status: "OK", message: "success", data: newUser});
-    
-            }
-        }
-
+        await UserModel.findOne({ email: req.body.email })
+            .then(find_Email => {
+                if(find_Email){
+                    res.status(403).json({status: 'Failed', message: 'Email already exists'});
+                }else{
+                    if(types === "cleint"){
+        
+                        const user = new client(user_Data);
+                        const newUser = user.save();
+                        
+                        WelCome_New_User(req.body.email, req.body.username)
+        
+                        res.status(200).json({status: "OK", message: "success", data: newUser});
+            
+                    }else if(types === "organization"){
+            
+                        const user = new organization(user_Data)
+                        const newUser = user.save();
+        
+                        WelCome_New_User(req.body.email, req.body.username)
+        
+                        res.status(200).json({status: "OK", message: "success", data: newUser});
+            
+                    }
+                }
+            })
         next();
     }catch(err){
         res.status(500).json({message: err})

@@ -5,7 +5,7 @@ import CarsModel from "../../Models/Cars/cars.model"
 
 const getUserController = async (req: Request | any ,res: Response, next: NextFunction) => {
     try{
-        const userID = req.user.id 
+        const userID = req.user.id
         const get_user = await UserModel.findById(userID)
         // Halls
         const UserHall = await HallModel.find({

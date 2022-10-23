@@ -56,10 +56,6 @@ const UserSchema = new Schema({
         type: Number,
         default: 0
     },
-    Saved: {
-        type: Array,
-        default: []
-    },
     token: {
         type: String
     },
