@@ -1,8 +1,8 @@
-import { toJSON_Products } from "../../Interfaces/shop/Product";
+import { toJSON_Order } from "../../Interfaces/shop/Order";
 
-export function toJSON (this: toJSON_Products){
-    const Products = this;
-    const ProductsObject = Products.toObject();
-    delete ProductsObject.__v;
-    return ProductsObject;
+export function toJSON (this: toJSON_Order){
+    const Order = this;
+    const OrderObject = Order.toObject();
+    delete OrderObject.__v;
+    return OrderObject;
 }

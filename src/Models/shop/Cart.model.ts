@@ -25,4 +25,5 @@ const CartSchema = new Schema({
 
 CartSchema.methods.toJSON = toJSON;
 
-export const ProductModel = model<CartInterface>('Cart', CartSchema)
+const CartModel = model<CartInterface>('Cart', CartSchema)
+export default CartModel
