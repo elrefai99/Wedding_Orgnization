@@ -4,19 +4,19 @@ import { createProductController, getPageDetailsController, getAllProductDetails
 
 const router = Router();
 
-// create Halls
+// create product
 router.post('/create/product', verifyToken, createProductController)
 
 // Get single page
-router.get('/get/:username/hall/:id', verifyToken, getPageDetailsController)
+router.get('/get/:username/product/:id', verifyToken, getPageDetailsController)
 
-// Get All halls
+// Get All product
 router.get('/get/all/:types', verifyToken, getAllProductDetailsController)
 
-// Update Halls
-router.put('/hall/settings/update/:id', verifyToken, UpdateProductDetailsController)
+// Update product
+router.put('/product/settings/update/:id', verifyToken, UpdateProductDetailsController)
 
-// Delete Halls
-router.delete('/hall/settings/delete/:id', verifyToken, DeleteProductDetailsController)
+// Delete product
+router.delete('/product/settings/delete/:id', verifyToken, DeleteProductDetailsController)
 
 export default router;
