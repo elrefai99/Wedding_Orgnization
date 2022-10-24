@@ -4,8 +4,6 @@ import MongoDB from './Database/Mongo.DB';
 import setupOther from './Utils/Others/setup.other';
 import indexHooks from './Hooks/index.hooks';
 
-import indexAdmin from './Admin/index.admin';
-
 const app: Application = express();
 
 // Connect Database MongoDB
@@ -17,4 +15,6 @@ setupOther(app)
 // Routers
 indexHooks(app)
 
-indexAdmin(app)
+app.get("*", (_req, res) => {
+    res.status(404).json({ err: "Not Found" });
+});

@@ -3,20 +3,20 @@ import verifyToken from "../../Middlewares/Auth.middleware";
 
 const router = Router();
 
-// create Halls
-router.post('/create/product', verifyToken)
+// create Cart
+router.post('/create/cart', verifyToken)
 
 // Get single page
-router.get('/get/:username/hall/:id', verifyToken)
+router.get('/get/:username/cart/:id', verifyToken)
 
-// Get All halls
+// Get All Cart
 router.get('/get/all/:types', verifyToken)
 
-// Update Halls
-router.put('/hall/settings/update/:id', verifyToken)
+// Update Cart
+router.put('/cart/settings/update/:id', verifyToken)
 
-// Delete Halls
-router.delete('/hall/settings/delete/:id', verifyToken)
+// Delete Cart
+router.delete('/cart/settings/delete/:id', verifyToken)
 
 
 export default router;
