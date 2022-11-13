@@ -1,6 +1,5 @@
-import UserModel from "./User.model";
-import { Schema } from "mongoose";
-
+import UserModel from './User.model'
+import { Schema } from 'mongoose'
 
 const OrgnizationSchema = new Schema({
     isHall: {
@@ -14,8 +13,8 @@ const OrgnizationSchema = new Schema({
     isClothes: {
         type: Boolean,
         default: false,
-    }
+    },
 })
-const client = UserModel.discriminator('Orgnization', OrgnizationSchema);
+const client = UserModel.discriminator('Orgnization', OrgnizationSchema)
 
-export default client;
+export default client

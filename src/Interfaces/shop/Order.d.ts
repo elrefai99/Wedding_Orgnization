@@ -1,4 +1,4 @@
-import { Document } from "mongoose";
+import { Document } from 'mongoose'
 
 export interface Order {
     userId: string
@@ -8,6 +8,6 @@ export interface Order {
     status: string
 }
 
-export interface toJSON_Order extends Order, Document{
-    toJSON: () => any; // any for now
+export interface toJSON_Order extends Order, Document {
+    toJSON: () => any // any for now
 }

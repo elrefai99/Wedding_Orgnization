@@ -1,4 +1,4 @@
-import { Request } from "express";
+import { Request } from 'express'
 import DataStord from '../Types/DataStord'
 
 interface RequestAuthintication extends Request {

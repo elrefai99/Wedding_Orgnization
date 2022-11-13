@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose";
-import { toJSON_Halls_Handel } from "../../Functions/Halls/toJSON.Halls";
-import Halls from "../../Interfaces/Halls/Halls";
+import { Schema, model } from 'mongoose'
+import { toJSON_Halls_Handel } from '../../Functions/Halls/toJSON.Halls'
+import Halls from '../../Interfaces/Halls/Halls'
 
 const PeopleSchema = new Schema({
     Max: {
@@ -10,7 +10,7 @@ const PeopleSchema = new Schema({
     Min: {
         type: Number,
         default: 0,
-    }
+    },
 })
 
 const DateSchema = new Schema({
@@ -21,7 +21,7 @@ const DateSchema = new Schema({
     to: {
         type: String,
         required: true,
-    }
+    },
 })
 
 const TimeDayOrNightsSchema = new Schema({
@@ -29,10 +29,10 @@ const TimeDayOrNightsSchema = new Schema({
         type: Boolean,
         default: false,
     },
-    Night:{
+    Night: {
         type: Boolean,
         default: false,
-    }
+    },
 })
 
 const HallSchema = new Schema({
@@ -52,13 +52,13 @@ const HallSchema = new Schema({
         type: String,
         required: true,
     },
-    TimeDay:TimeDayOrNightsSchema,
-    
+    TimeDay: TimeDayOrNightsSchema,
+
     Date: DateSchema,
 
     cost_Per_Person: {
         type: Number,
-        default: 0
+        default: 0,
     },
     People: PeopleSchema,
 
@@ -76,8 +76,8 @@ const HallSchema = new Schema({
     },
 })
 
-HallSchema.methods.toJSON = toJSON_Halls_Handel;
+HallSchema.methods.toJSON = toJSON_Halls_Handel
 
 const HallModel = model<Halls>('hall', HallSchema)
 
-export default HallModel;
+export default HallModel

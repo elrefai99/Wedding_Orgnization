@@ -1,3 +1,3 @@
 export default interface DataStord {
-    _id: string;
+    _id: string
 }

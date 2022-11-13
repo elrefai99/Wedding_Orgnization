@@ -1,13 +1,12 @@
-import UserModel from "./User.model";
-import { Schema } from "mongoose";
-
+import UserModel from './User.model'
+import { Schema } from 'mongoose'
 
 const ClientSchema = new Schema({
-    gender:{
+    gender: {
         type: String,
         required: true,
-    }
+    },
 })
-const client = UserModel.discriminator('Client', ClientSchema);
+const client = UserModel.discriminator('Client', ClientSchema)
 
-export default client;
+export default client

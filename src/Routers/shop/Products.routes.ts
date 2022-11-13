@@ -1,8 +1,14 @@
-import { Router } from "express";
-import verifyToken from "../../Middlewares/Auth.middleware";
-import { createProductController, getPageDetailsController, getAllProductDetailsController, UpdateProductDetailsController, DeleteProductDetailsController } from "../../Controllers/shop/Products.controller";
+import { Router } from 'express'
+import verifyToken from '../../Middlewares/Auth.middleware'
+import {
+    createProductController,
+    getPageDetailsController,
+    getAllProductDetailsController,
+    UpdateProductDetailsController,
+    DeleteProductDetailsController,
+} from '../../Controllers/shop/Products.controller'
 
-const router = Router();
+const router = Router()
 
 // create product
 router.post('/create/product', verifyToken, createProductController)
@@ -19,4 +25,4 @@ router.put('/product/settings/update/:id', verifyToken, UpdateProductDetailsCont
 // Delete product
 router.delete('/product/settings/delete/:id', verifyToken, DeleteProductDetailsController)
 
-export default router;
+export default router

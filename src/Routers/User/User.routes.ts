@@ -1,8 +1,12 @@
-import { Router } from "express";
-import { getUserController, UpdateUserProfileController, SaveTopicOfAllControllers } from "../../Controllers/User/User.controllert";
-import verifyToken from "../../Middlewares/Auth.middleware";
+import { Router } from 'express'
+import {
+    getUserController,
+    UpdateUserProfileController,
+    SaveTopicOfAllControllers,
+} from '../../Controllers/User/User.controllert'
+import verifyToken from '../../Middlewares/Auth.middleware'
 
-const router = Router();
+const router = Router()
 
 // Get user profile
 router.get('/user/', verifyToken, getUserController)
@@ -13,4 +17,4 @@ router.put('/user/settings/update', verifyToken, UpdateUserProfileController)
 // Add Save Topic
 router.put('/user/settings/save', verifyToken, SaveTopicOfAllControllers)
 
-export default router;
+export default router
